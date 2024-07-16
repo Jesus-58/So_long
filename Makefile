@@ -1,21 +1,33 @@
-NAME	= so_long
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: jesumore <jesumore@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/07/16 22:51:23 by jesumore          #+#    #+#              #
+#    Updated: 2024/07/16 22:52:12 by jesumore         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+NAME = so_long
 CC = clang
 CCFLAGS = -g -Wall -Wextra -Werror -Iinclude
 GLFW = -ldl -lglfw -pthread -lm
 
-LIBFT_PATH	= ./Libft
+LIBFT_PATH = ./Libft
 LIBFT = $(LIBFT_PATH)/libft.a
 
-MLX_PATH	= ./MLX42/build
+MLX_PATH = ./MLX42/build
 MLX = $(MLX_PATH)/libmlx42.a
 
 PRINTF_PATH = ./Printf
 PRINTF = $(PRINTF_PATH)/libftprintf.a
 
-SRCS	= checks_2.c checks_3.c checks.c game.c images.c \
+SRCS = checks_2.c checks_3.c checks.c game.c images.c \
 			main.c map_utils.c moves.c \
 
-OBJS	= ${SRCS:.c=.o}
+OBJS = ${SRCS:.c=.o}
 RM = rm -f
 HEADERS	= -I ./includes -I ${MLX_PATH}/include/MLX42 -I ${LIBFT_PATH} -I ${PRINTF_PATH}
 
@@ -35,7 +47,7 @@ $(PRINTF):
 $(MLX):
 	@make -s -C ${MLX_PATH} all
 
-all: libft ${NAME}
+all: ${NAME}
 
 clean:
 	@-$(RM) $(OBJS)
