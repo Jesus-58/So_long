@@ -6,7 +6,7 @@
 /*   By: jesumore <jesumore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 21:00:07 by jesumore          #+#    #+#             */
-/*   Updated: 2024/07/16 22:11:47 by jesumore         ###   ########.fr       */
+/*   Updated: 2024/07/17 18:05:13 by jesumore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ext_check(char *map_name)
 	len = ft_strlen(map_name);
 	if (map_name[len - 4] != '.' || map_name[len - 3] != 'b'
 		|| map_name[len - 2] != 'e' || map_name[len - 1] != 'r')
-		return (ft_printf(EXT_ERROR), 1);
+		return (1);
 	return (0);
 }
 

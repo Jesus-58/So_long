@@ -6,7 +6,7 @@
 /*   By: jesumore <jesumore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 21:02:24 by jesumore          #+#    #+#             */
-/*   Updated: 2024/07/16 22:16:31 by jesumore         ###   ########.fr       */
+/*   Updated: 2024/07/17 18:07:31 by jesumore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ int	main(int argc, char **argv)
 	if (argc != 2)
 		return (ft_printf("Error:\n%s", ARG_ERROR), 1);
 	map_name = argv[1];
-	ext_check(map_name);
+	if (ext_check(map_name) == 1)
+		return (ft_printf("Error:\n%s", EXT_ERROR), 1);
 	if (check_map_exist(map_name) == 1)
 		return (ft_printf("Error:\n%s", EXIST_ERROR), 1);
 	game = (t_game *)malloc(sizeof(t_game));
